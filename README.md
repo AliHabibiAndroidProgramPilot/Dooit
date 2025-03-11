@@ -37,6 +37,8 @@ You can find more of their work at:
 
 ## App ScreenShots
 
+![Cover](Cover.png)
+![Welcome](Welcome.png)
 
 
 ## Getting Started
