@@ -39,6 +39,9 @@ You can find more of their work at:
 
 ![Cover](Cover.png)
 ![Welcome](Welcome.png)
+![Home](Home.png)
+![Pinned List](PinnedList.png)
+![Written List](WrittenList.png)
 
 
 ## Getting Started
