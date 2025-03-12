@@ -4,4 +4,6 @@ interface WelcomePageView {
 
     fun removeFragment()
 
+    fun setSystemBarsColors() {}
+
 }

@@ -1,9 +1,12 @@
 package com.ali.dooit.ui
 
+import android.content.res.Configuration
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import com.ali.dooit.R
 import com.ali.dooit.databinding.FragmentWelcomePageBinding
@@ -28,6 +31,12 @@ class WelcomePageFragment : Fragment(), WelcomePageView {
         super.onViewCreated(view, savedInstanceState)
         presenter = PresenterWelcomePageFragment(this)
         binding.btnContinue.setOnClickListener {
+            val isLightModeOn: Boolean =
+                (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_NO) ==
+                        Configuration.UI_MODE_NIGHT_NO
+            if (isLightModeOn) {
+                presenter.setBackSystemBarsColors()
+            }
             presenter.onContinueButtonClicked()
         }
     }
@@ -37,6 +46,15 @@ class WelcomePageFragment : Fragment(), WelcomePageView {
             .setCustomAnimations(0, R.animator.fade_out)
             .remove(this)
             .commit()
+    }
+
+    override fun setSystemBarsColors() {
+        val window = requireActivity().window
+        val insetsController = WindowCompat.getInsetsController(window, window.decorView)
+        window.statusBarColor = Color.WHITE
+        window.navigationBarColor = Color.WHITE
+        insetsController.isAppearanceLightNavigationBars = true
+        insetsController.isAppearanceLightStatusBars = true
     }
 
     override fun onDestroyView() {
