@@ -1,6 +1,8 @@
 package com.ali.dooit.mvp.view
 
 import android.content.Context
+import android.content.res.Configuration
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import com.ali.dooit.databinding.ActivityMainBinding
@@ -16,5 +18,15 @@ class ViewMainActivity : FrameLayout {
     }
 
     val binding: ActivityMainBinding = ActivityMainBinding.inflate(LayoutInflater.from(context))
+
+    fun setSystemBarsColors() {
+        val isLightModeOn: Boolean =
+            (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_NO) ==
+                    Configuration.UI_MODE_NIGHT_NO
+        Log.i("IS_LIGHT_MODE_ON", isLightModeOn.toString())
+        if (isLightModeOn) {
+            utils.changeSystemBarsColors()
+        }
+    }
 
 }

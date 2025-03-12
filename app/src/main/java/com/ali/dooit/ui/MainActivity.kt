@@ -1,14 +1,13 @@
 package com.ali.dooit.ui
 
-import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.ali.dooit.R
 import com.ali.dooit.mvp.ext.ActivityUtils
 import com.ali.dooit.mvp.model.ModelMainActivity
@@ -34,21 +33,18 @@ class MainActivity : AppCompatActivity(), ActivityUtils {
         presenter.onCreate()
     }
 
-    override fun setFragmentManager() {
-        val isLightModeOn: Boolean =
-            (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_NO) ==
-                    Configuration.UI_MODE_NIGHT_NO
-        Log.i("IS_LIGHT_MODE_ON", isLightModeOn.toString())
-        if (isLightModeOn) {
-            val insetsController = WindowCompat.getInsetsController(window, window.decorView)
-            window.statusBarColor = Color.BLACK
-            window.navigationBarColor = Color.BLACK
-            insetsController.isAppearanceLightNavigationBars = false
-            insetsController.isAppearanceLightStatusBars = false
-        }
+    override fun setFragmentManager(containerId: Int, fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.welcome_page_container, WelcomePageFragment())
+            .replace(containerId, fragment)
             .commit()
+    }
+
+    override fun changeSystemBarsColors() {
+        val insetsController = WindowCompat.getInsetsController(window, window.decorView)
+        window.statusBarColor = Color.BLACK
+        window.navigationBarColor = Color.BLACK
+        insetsController.isAppearanceLightNavigationBars = false
+        insetsController.isAppearanceLightStatusBars = false
     }
 
 }
