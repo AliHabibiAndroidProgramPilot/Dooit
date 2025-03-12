@@ -4,21 +4,23 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ali.dooit.R
+import com.ali.dooit.mvp.ext.ActivityUtils
 import com.ali.dooit.mvp.model.ModelMainActivity
 import com.ali.dooit.mvp.presenter.PresenterMainActivity
 import com.ali.dooit.mvp.view.ViewMainActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ActivityUtils {
 
     private lateinit var presenter: PresenterMainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val view = ViewMainActivity(this)
+        val view = ViewMainActivity(this, this)
         val model = ModelMainActivity(this)
-        presenter = PresenterMainActivity(view, model)
+        presenter = PresenterMainActivity(view, model, this)
         enableEdgeToEdge()
         setContentView(view.binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -27,6 +29,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         presenter.onCreate()
+    }
+
+    override fun setFragmentManager() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.welcome_page_container, WelcomePageFragment())
+            .commit()
     }
 
 }
