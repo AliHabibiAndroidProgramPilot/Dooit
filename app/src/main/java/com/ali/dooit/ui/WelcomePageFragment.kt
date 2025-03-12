@@ -34,7 +34,7 @@ class WelcomePageFragment : Fragment(), WelcomePageView {
 
     override fun removeFragment() {
         parentFragmentManager.beginTransaction()
-            .setCustomAnimations(0, R.animator.fade_in)
+            .setCustomAnimations(0, R.animator.fade_out)
             .remove(this)
             .commit()
     }
