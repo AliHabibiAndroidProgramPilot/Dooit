@@ -1,5 +1,6 @@
 package com.ali.dooit.mvp.presenter
 
+import com.ali.dooit.R
 import com.ali.dooit.mvp.ext.ActivityLifecycle
 import com.ali.dooit.mvp.ext.ActivityUtils
 import com.ali.dooit.mvp.model.ModelMainActivity
@@ -17,12 +18,20 @@ class PresenterMainActivity(
     }
 
     private fun setWelcomePageFragment() {
-        systemBarsColors()
-        utils.setFragmentManager(com.ali.dooit.R.id.welcome_page_container, WelcomePageFragment())
+        if (checkAppRunState()) {
+            systemBarsColors()
+            utils.setFragmentManager(R.id.welcome_page_container, WelcomePageFragment())
+        }
     }
 
     private fun systemBarsColors() {
         view.setSystemBarsColors()
+    }
+
+    private fun checkAppRunState(): Boolean {
+        val isFirstRun = model.saveAppRunState()
+        model.changeAppRunState()
+        return isFirstRun
     }
 
 }
