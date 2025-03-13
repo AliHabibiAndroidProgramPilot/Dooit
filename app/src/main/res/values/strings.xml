@@ -5,4 +5,7 @@
     <string name="welcome_description">Write what you need \n to do. Everyday</string>
     <string name="btn_continue">Continue</string>
     <string name="ic_search">ic_search</string>
+    <string name="todo_main">todo_main</string>
+    <string name="create_todo">Create your first to-do list...</string>
+    <string name="new_list">New List</string>
 </resources>

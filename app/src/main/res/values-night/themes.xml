@@ -6,14 +6,14 @@
         <item name="android:colorEdgeEffect">@color/black</item>
     </style>
 
-    <style name="TabTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+    <style name="MainTextAppearance" parent="@android:style/TextAppearance.Widget.TabWidget">
         <item name="android:textSize">16sp</item>
         <item name="fontFamily">@font/graphik_medium</item>
         <item name="android:textColor">?attr/colorControlNormal</item>
     </style>
 
     <style name="TabLayout" parent="Theme.Dooit">
-        <item name="tabTextAppearance">@style/TabTextStyle</item>
+        <item name="tabTextAppearance">@style/MainTextAppearance</item>
         <item name="tabSelectedTextColor">@color/white</item>
         <item name="tabMode">fixed</item>
         <item name="tabGravity">fill</item>
@@ -23,4 +23,29 @@
         <item name="tabIndicatorFullWidth">true</item>
         <item name="tabRippleColor">@android:color/transparent</item>
     </style>
+
+    <style name="ExtendedFabShapeAppearanceOverlay" parent="Theme.Dooit">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="ExtendedFloatingActionButton" parent="Theme.Dooit">
+        <item name="shapeAppearanceOverlay">@style/ExtendedFabShapeAppearanceOverlay</item>
+        <item name="backgroundTint">@color/black</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/graphik_regular</item>
+        <item name="icon">@drawable/ic_add</item>
+        <item name="iconTint">@color/white</item>
+        <item name="iconPadding">5dp</item>
+    </style>
+
+    <style name="CircleFloatingActionButton" parent="Theme.Dooit">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>
