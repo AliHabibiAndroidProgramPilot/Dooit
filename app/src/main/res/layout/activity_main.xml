@@ -31,7 +31,7 @@
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/logo"
             android:scaleType="fitCenter"
-            android:src="@drawable/logo_black" />
+            android:src="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -116,13 +116,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:contentDescription="@string/todo_main"
         android:src="@drawable/ic_add"
         android:visibility="gone"
         app:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:shapeAppearanceOverlay="@style/CircleFloatingActionButton"
-        android:contentDescription="@string/todo_main"
         app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
