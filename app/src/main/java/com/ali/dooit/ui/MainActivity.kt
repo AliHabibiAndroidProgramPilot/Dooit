@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import com.ali.dooit.R
 import com.ali.dooit.mvp.ext.ActivityUtils
 import com.ali.dooit.mvp.model.ModelMainActivity
@@ -46,5 +48,9 @@ class MainActivity : AppCompatActivity(), ActivityUtils {
         insetsController.isAppearanceLightNavigationBars = false
         insetsController.isAppearanceLightStatusBars = false
     }
+
+    override fun takeFragmentManager() = supportFragmentManager
+
+    override fun takeLifecycle() = lifecycle
 
 }

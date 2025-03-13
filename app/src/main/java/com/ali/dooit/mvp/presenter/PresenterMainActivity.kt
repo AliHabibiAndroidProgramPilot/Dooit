@@ -15,6 +15,7 @@ class PresenterMainActivity(
 
     override fun onCreate() {
         setWelcomePageFragment()
+        initializeTabLayout()
     }
 
     private fun setWelcomePageFragment() {
@@ -22,6 +23,10 @@ class PresenterMainActivity(
             systemBarsColors()
             utils.setFragmentManager(R.id.welcome_page_container, WelcomePageFragment())
         }
+    }
+
+    private fun initializeTabLayout() {
+        view.initializeTabLayout()
     }
 
     private fun systemBarsColors() {

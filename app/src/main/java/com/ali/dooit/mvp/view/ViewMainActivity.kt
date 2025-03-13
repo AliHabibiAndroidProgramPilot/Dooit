@@ -5,8 +5,12 @@ import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.FrameLayout
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import com.ali.dooit.adapter.TabLayoutAdapter
 import com.ali.dooit.databinding.ActivityMainBinding
 import com.ali.dooit.mvp.ext.ActivityUtils
+import com.google.android.material.tabs.TabLayoutMediator
 
 class ViewMainActivity : FrameLayout {
 
@@ -27,6 +31,17 @@ class ViewMainActivity : FrameLayout {
         if (isLightModeOn) {
             utils.changeSystemBarsColors()
         }
+    }
+
+    fun initializeTabLayout() {
+        val tabLayoutTitles = listOf("All List", "Pinned")
+        val fragmentManager: FragmentManager = utils.takeFragmentManager()!!
+        val lifecycle: Lifecycle = utils.takeLifecycle()!!
+        binding.tabLayoutViewPager.adapter = TabLayoutAdapter(fragmentManager, lifecycle)
+        binding.tabLayoutViewPager.isUserInputEnabled = false
+        TabLayoutMediator(binding.mainTabLayout, binding.tabLayoutViewPager) { tab, position ->
+            tab.text = tabLayoutTitles[position]
+        }.attach()
     }
 
 }
