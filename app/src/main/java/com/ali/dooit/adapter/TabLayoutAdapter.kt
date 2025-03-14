@@ -11,12 +11,13 @@ class TabLayoutAdapter(
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(fragmentManager, lifecycle) {
+
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment =
         when (position) {
-            1 -> AllListFragment()
-            2 -> PinnedFragment()
+            1 -> PinnedFragment()
+            2 -> AllListFragment()
             else -> AllListFragment()
         }
 }

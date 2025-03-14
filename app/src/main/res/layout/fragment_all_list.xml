@@ -3,10 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/view_group"
     tools:context=".ui.AllListFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/test"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="26sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
