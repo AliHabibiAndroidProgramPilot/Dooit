@@ -5,8 +5,8 @@ import androidx.room.Relation
 import com.ali.dooit.db.entities.Label
 import com.ali.dooit.db.entities.Task
 
-data class LabelWithTasks(
-    @Embedded val label: Label,
-    @Relation(parentColumn = "label", entityColumn = "taskLabel")
-    val tasks: List<Task>
+data class TasksWithLabel(
+    @Embedded val task: Task,
+    @Relation(parentColumn = "taskLabel", entityColumn = "label")
+    val labels: List<Label>
 )
