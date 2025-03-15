@@ -8,11 +8,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.ali.dooit.R
+import com.ali.dooit.db.AppDataBase
 import com.ali.dooit.mvp.ext.ActivityUtils
 import com.ali.dooit.mvp.model.ModelMainActivity
 import com.ali.dooit.mvp.presenter.PresenterMainActivity
 import com.ali.dooit.mvp.view.ViewMainActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity(), ActivityUtils {
 
