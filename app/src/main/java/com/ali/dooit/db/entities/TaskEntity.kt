@@ -10,7 +10,7 @@ import java.time.Instant
 data class TaskEntity(
     @PrimaryKey(true) val taskId: Int = 0,
     @ColumnInfo val taskTitle: String,
-    @ColumnInfo val taskLabel: String = "",
+    @ColumnInfo val taskLabel: String? = null,
     @ColumnInfo val isPinned: Boolean = false,
     @ColumnInfo val isNotificationSet: Boolean = false,
     @ColumnInfo val notificationId: Int? = null,

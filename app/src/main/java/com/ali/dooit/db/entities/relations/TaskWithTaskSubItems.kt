@@ -7,6 +7,6 @@ import com.ali.dooit.db.entities.TaskSubItemsEntity
 
 data class TaskWithTaskSubItems(
     @Embedded val task: TaskEntity,
-    @Relation(parentColumn = "taskId", entityColumn = "taskSubItemTitle")
-    val taskSubItems: List<TaskSubItemsEntity>
+    @Relation(parentColumn = "taskId", entityColumn = "taskOwnerId")
+    val taskSubitems: List<TaskSubItemsEntity>
 )
