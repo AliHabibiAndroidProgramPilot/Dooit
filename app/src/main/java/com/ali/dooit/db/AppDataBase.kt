@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.ali.dooit.db.dao.LabelDao
 import com.ali.dooit.db.dao.TaskDao
 import com.ali.dooit.db.dao.TaskSubItemDao
@@ -16,6 +17,7 @@ import com.ali.dooit.db.entities.TaskSubItemsEntity
     version = AppDataBase.DATABASE_VERSION,
     exportSchema = false
 )
+@TypeConverters(Converters::class)
 abstract class AppDataBase : RoomDatabase() {
 
     companion object {

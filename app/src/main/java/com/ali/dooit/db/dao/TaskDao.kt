@@ -20,7 +20,7 @@ interface TaskDao {
 
     @Transaction
     @Query("SELECT * FROM ${AppDataBase.TASK_TABLE_NAME} WHERE isPinned = :isPinned")
-    suspend fun getTasksByState(isPinned: Boolean): Flow<List<TaskEntity>>
+    fun getTasksByState(isPinned: Boolean): Flow<List<TaskEntity>>
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateTask(vararg task: TaskEntity)

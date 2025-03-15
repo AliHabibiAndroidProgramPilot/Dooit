@@ -8,7 +8,7 @@ import java.time.Instant
 
 @Entity(tableName = AppDataBase.TASK_TABLE_NAME)
 data class TaskEntity(
-    @PrimaryKey(true) val taskId: Int,
+    @PrimaryKey(true) val taskId: Int = 0,
     @ColumnInfo val taskTitle: String,
     @ColumnInfo val taskLabel: String = "",
     @ColumnInfo val isPinned: Boolean = false,
