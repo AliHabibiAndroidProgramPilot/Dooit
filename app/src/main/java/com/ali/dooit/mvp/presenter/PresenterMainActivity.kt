@@ -14,6 +14,7 @@ class PresenterMainActivity(
 ) : ActivityLifecycle {
 
     override fun onCreate() {
+        onApplyWindowInsets()
         setWelcomePageFragment()
         initializeTabLayout()
     }
@@ -37,6 +38,10 @@ class PresenterMainActivity(
         val isFirstRun = model.saveAppRunState()
         model.changeAppRunState()
         return isFirstRun
+    }
+
+    private fun onApplyWindowInsets() {
+        view.applyWindowInsets()
     }
 
 }

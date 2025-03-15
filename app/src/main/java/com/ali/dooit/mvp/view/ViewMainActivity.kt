@@ -5,6 +5,8 @@ import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.FrameLayout
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import com.ali.dooit.adapter.TabLayoutAdapter
@@ -22,6 +24,14 @@ class ViewMainActivity : FrameLayout {
     }
 
     val binding: ActivityMainBinding = ActivityMainBinding.inflate(LayoutInflater.from(context))
+
+    fun applyWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, inset ->
+            val systemBars = inset.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            inset
+        }
+    }
 
     fun setSystemBarsColors() {
         val isLightModeOn: Boolean =
