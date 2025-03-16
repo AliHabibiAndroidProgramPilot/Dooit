@@ -4,11 +4,8 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.ali.dooit.R
 import com.ali.dooit.mvp.ext.ActivityUtils
 import com.ali.dooit.mvp.model.ModelMainActivity
 import com.ali.dooit.mvp.presenter.PresenterMainActivity

@@ -25,7 +25,7 @@ interface TaskDao {
 
     @Transaction
     @Query("SELECT * FROM ${AppDataBase.TASK_TABLE_NAME} WHERE isPinned = :isPinned")
-    fun getAllTasksByState(isPinned: Boolean): Flow<List<TaskEntity>>  // Get all tasks with their sub-items
+    fun getAllTasksByState(isPinned: Boolean): Flow<List<TaskWithTaskSubItems>>  // Get all tasks with their sub-items
 
     @Transaction
     @Query("SELECT * FROM ${AppDataBase.TASK_TABLE_NAME} WHERE taskId = :taskId AND isPinned = :isPinned")

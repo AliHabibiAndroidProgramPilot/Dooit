@@ -23,7 +23,6 @@ abstract class AppDataBase : RoomDatabase() {
         const val DATABASE_VERSION = 1
         const val TASK_TABLE_NAME = "Task"
         const val TASK_SUB_ITEM_TABLE_NAME = "Task_Sub_Items"
-        const val LABEL_TABLE_NAME = "Label"
         private var instance: AppDataBase? = null
         fun getDatabaseInstance(context: Context): AppDataBase {
             if (instance == null) {
