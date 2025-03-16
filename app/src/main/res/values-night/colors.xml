@@ -3,4 +3,7 @@
     <color name="black">#FFF</color>
     <color name="white">#000</color>
     <color name="control_gray">#585858</color>
+    <color name="item_background_color1">#004D03</color>
+    <color name="item_background_color2">#9F6A0F</color>
+    <color name="item_background_color3">#744E7B</color>
 </resources>

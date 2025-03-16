@@ -9,4 +9,5 @@
     <string name="create_todo" tools:ignore="TypographyEllipsis">Create your first to-do list...</string>
     <string name="new_list">New List</string>
     <string name="no_pinned_list_yet" tools:ignore="TypographyEllipsis">Ooops! No pinned list yet...</string>
+    <string name="icon_date">icon date</string>
 </resources>
