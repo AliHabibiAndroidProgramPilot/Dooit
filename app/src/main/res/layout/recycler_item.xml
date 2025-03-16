@@ -6,9 +6,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     app:cardCornerRadius="16dp"
-    app:cardUseCompatPadding="true"
     app:strokeColor="@color/black"
     app:strokeWidth="1.4dp"
+    app:cardUseCompatPadding="true"
     tools:context=".ui.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="22dp"
             android:ellipsize="end"
             android:fontFamily="@font/graphik_medium"
             android:textColor="@color/black"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="22dp"
             android:background="@drawable/txt_label_bg"
             android:fontFamily="@font/graphik_regular"
             android:maxWidth="65dp"
