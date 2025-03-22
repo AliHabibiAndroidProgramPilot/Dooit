@@ -1,5 +1,6 @@
 package com.ali.dooit.ui
 
+import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -42,5 +43,7 @@ class MainActivity : AppCompatActivity(), ActivityUtils {
     override fun takeFragmentManager() = supportFragmentManager
 
     override fun takeLifecycle() = lifecycle
+
+    override fun getResourcesConfiguration(): Configuration = resources.configuration
 
 }

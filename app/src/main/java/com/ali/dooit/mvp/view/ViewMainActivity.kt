@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
-import android.widget.FrameLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
@@ -14,14 +13,10 @@ import com.ali.dooit.databinding.ActivityMainBinding
 import com.ali.dooit.mvp.ext.ActivityUtils
 import com.google.android.material.tabs.TabLayoutMediator
 
-class ViewMainActivity : FrameLayout {
-
-    private lateinit var utils: ActivityUtils
-
-    constructor(contextInstance: Context) : super(contextInstance)
-    constructor(contextInstance: Context, activityUtils: ActivityUtils) : super(contextInstance) {
-        utils = activityUtils
-    }
+class ViewMainActivity(
+    private val context: Context,
+    private val utils: ActivityUtils
+) {
 
     val binding: ActivityMainBinding = ActivityMainBinding.inflate(LayoutInflater.from(context))
 
@@ -34,8 +29,9 @@ class ViewMainActivity : FrameLayout {
     }
 
     fun setSystemBarsColors() {
+        val configuration: Configuration = utils.getResourcesConfiguration()!!
         val isLightModeOn: Boolean =
-            (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_NO) ==
+            (configuration.uiMode and Configuration.UI_MODE_NIGHT_NO) ==
                     Configuration.UI_MODE_NIGHT_NO
         Log.i("IS_LIGHT_MODE_ON", isLightModeOn.toString())
         if (isLightModeOn) {

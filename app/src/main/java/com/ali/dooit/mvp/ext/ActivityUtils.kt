@@ -1,5 +1,6 @@
 package com.ali.dooit.mvp.ext
 
+import android.content.res.Configuration
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
@@ -13,5 +14,7 @@ interface ActivityUtils {
     fun takeFragmentManager(): FragmentManager? { return null }
 
     fun takeLifecycle(): Lifecycle? { return null }
+
+    fun getResourcesConfiguration(): Configuration? { return null }
 
 }
