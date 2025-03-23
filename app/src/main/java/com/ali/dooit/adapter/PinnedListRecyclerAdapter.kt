@@ -5,10 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.ali.dooit.R
 import com.ali.dooit.databinding.RecyclerItemBinding
 import com.ali.dooit.db.entities.TaskEntity
 import com.ali.dooit.db.entities.relations.TaskWithTaskSubItems
 import java.time.format.DateTimeFormatter
+import kotlin.random.Random
 
 class PinnedListRecyclerAdapter(
     private val tasksList: ArrayList<TaskWithTaskSubItems>
@@ -17,7 +19,14 @@ class PinnedListRecyclerAdapter(
     inner class CustomViewHolder(private val binding: RecyclerItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        private val colors = listOf(
+            R.color.item_background_color1,
+            R.color.item_background_color2,
+            R.color.item_background_color3,
+        )
+
         fun setData(item: TaskEntity) {
+            binding.helperViewGroup.setBackgroundColor(colors[Random.nextInt(0, 3)])
             // Add Task Title
             binding.txtTitle.text = item.taskTitle
             // Manage Task Label
