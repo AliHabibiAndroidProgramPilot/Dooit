@@ -1,8 +1,12 @@
 package com.ali.dooit.mvp.ext
 
+import com.ali.dooit.db.entities.relations.TaskWithTaskSubItems
+
 interface PinnedFragmentContract {
 
     interface View {
+
+        fun initPinnedRecycler(pinnedTasks: ArrayList<TaskWithTaskSubItems>)
 
     }
 
@@ -17,6 +21,10 @@ interface PinnedFragmentContract {
     }
 
     interface Model {
+
+        suspend fun getPinnedTasks(): ArrayList<TaskWithTaskSubItems>
+
+        fun closeDatabase()
 
     }
 

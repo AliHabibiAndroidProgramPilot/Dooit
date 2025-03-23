@@ -25,11 +25,14 @@ interface TaskDao {
 
     @Transaction
     @Query("SELECT * FROM ${AppDataBase.TASK_TABLE_NAME} WHERE isPinned = :isPinned")
-    fun getAllTasksByState(isPinned: Boolean): Flow<List<TaskWithTaskSubItems>>  // Get all tasks with their sub-items
+    suspend fun getAllTasksByState(isPinned: Boolean): List<TaskWithTaskSubItems> // Get all tasks with their sub-items
 
     @Transaction
     @Query("SELECT * FROM ${AppDataBase.TASK_TABLE_NAME} WHERE taskId = :taskId AND isPinned = :isPinned")
-    suspend fun getTask(taskId: Int, isPinned: Boolean): TaskWithTaskSubItems?  // Get a specific task with their sub-items
+    suspend fun getTask(
+        taskId: Int,
+        isPinned: Boolean
+    ): TaskWithTaskSubItems?  // Get a specific task with their sub-items
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateTask(vararg task: TaskEntity)

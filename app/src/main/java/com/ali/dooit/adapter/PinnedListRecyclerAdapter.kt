@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ali.dooit.databinding.RecyclerItemBinding
 import com.ali.dooit.db.entities.TaskEntity
+import com.ali.dooit.db.entities.relations.TaskWithTaskSubItems
 import java.time.format.DateTimeFormatter
 
 class PinnedListRecyclerAdapter(
-    private val tasksList: ArrayList<TaskEntity>
+    private val tasksList: ArrayList<TaskWithTaskSubItems>
 ) : RecyclerView.Adapter<PinnedListRecyclerAdapter.CustomViewHolder>() {
 
     inner class CustomViewHolder(private val binding: RecyclerItemBinding) :
@@ -44,10 +45,10 @@ class PinnedListRecyclerAdapter(
     override fun getItemCount(): Int = tasksList.size
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.setData(tasksList[position])
+        holder.setData(tasksList[position].task)
     }
 
-    fun initializeDiffCallback(newList: ArrayList<TaskEntity>) {
+    fun initializeDiffCallback(newList: ArrayList<TaskWithTaskSubItems>) {
         val diffCallBack = RecyclerDiffUtils(tasksList, newList)
         val diffResult = DiffUtil.calculateDiff(diffCallBack)
         tasksList.clear()
