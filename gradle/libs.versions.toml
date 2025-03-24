@@ -15,6 +15,7 @@ constraintlayout = "2.2.0"
 roomRuntime = "2.6.1"
 #noinspection GradleDependency
 ksp = "2.0.21-1.0.27"
+themedToggleButtonGroup = "1.4.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,6 +29,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+themed-toggle-button-group = { module = "nl.bryanderidder:themed-toggle-button-group", version.ref = "themedToggleButtonGroup" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
