@@ -21,15 +21,17 @@ class PresenterPinnedFragment(
     }
 
     override fun viewCaller() {
-        try {
-            scope.launch {
+        // Launching Code On Main Thread With Help Of scope Variable
+        scope.launch {
+            try {
+                // Switches To IO Thread To Operate Database Function
                 val pinnedTasks = withContext(Dispatchers.IO) {
                     model.getTasksByState(true)
                 }
                 view?.initPinnedRecycler(pinnedTasks)
+            } catch (e: Exception) {
+                Log.e("VIEW_CALLER", e.message!!)
             }
-        } catch (e: Exception) {
-            Log.e("VIEW_CALLER", e.message!!)
         }
     }
 
