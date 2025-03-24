@@ -22,7 +22,7 @@ interface PinnedFragmentContract {
 
     interface Model {
 
-        suspend fun getPinnedTasks(): ArrayList<TaskWithTaskSubItems>
+        suspend fun getTasksByState(isPinned: Boolean): ArrayList<TaskWithTaskSubItems>
 
         fun closeDatabase()
 

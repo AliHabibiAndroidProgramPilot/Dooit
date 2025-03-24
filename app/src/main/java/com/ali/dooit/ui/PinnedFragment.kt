@@ -40,7 +40,6 @@ class PinnedFragment : Fragment(), PinnedFragmentContract.View {
     }
 
     override fun initPinnedRecycler(pinnedTasks: ArrayList<TaskWithTaskSubItems>) {
-        Log.i("TESTING", pinnedTasks.size.toString())
         recyclerAdapter = PinnedListRecyclerAdapter(pinnedTasks)
         binding.pinnedRecycler.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)

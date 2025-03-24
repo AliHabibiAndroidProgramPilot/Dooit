@@ -11,9 +11,9 @@ class ModelPinnedFragment(context: Context) : PinnedFragmentContract.Model {
 
     private val database = AppDataBase.getDatabaseInstance(context)
 
-    override suspend fun getPinnedTasks(): ArrayList<TaskWithTaskSubItems> {
+    override suspend fun getTasksByState(isPinned: Boolean): ArrayList<TaskWithTaskSubItems> {
         return withContext(Dispatchers.IO) {
-            val collection = database.taskDao().getAllTasksByState(true)
+            val collection = database.taskDao().getAllTasksByState(isPinned)
             ArrayList(collection)
         }
     }

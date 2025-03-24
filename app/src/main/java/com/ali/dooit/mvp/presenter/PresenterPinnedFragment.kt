@@ -24,7 +24,7 @@ class PresenterPinnedFragment(
         try {
             scope.launch {
                 val pinnedTasks = withContext(Dispatchers.IO) {
-                    model.getPinnedTasks()
+                    model.getTasksByState(true)
                 }
                 view?.initPinnedRecycler(pinnedTasks)
             }
