@@ -3,19 +3,22 @@ package com.ali.dooit.ui
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.ali.dooit.R
+import com.ali.dooit.mvp.ext.ActivityUtils
+import com.ali.dooit.mvp.model.ModelAddTaskActivity
+import com.ali.dooit.mvp.presenter.PresenterAddTaskActivity
+import com.ali.dooit.mvp.view.ViewAddTaskActivity
 
-class AddTaskActivity : AppCompatActivity() {
+class AddTaskActivity : AppCompatActivity(), ActivityUtils {
+
+    private lateinit var presenter: PresenterAddTaskActivity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val view = ViewAddTaskActivity(this, this)
+        val model = ModelAddTaskActivity(this)
+        presenter = PresenterAddTaskActivity(view, model, this)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_add_task)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        setContentView(view.binding.root)
+        presenter.onCreate()
     }
 }

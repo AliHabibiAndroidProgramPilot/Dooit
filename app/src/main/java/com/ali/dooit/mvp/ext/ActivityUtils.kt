@@ -7,7 +7,7 @@ import androidx.lifecycle.Lifecycle
 
 interface ActivityUtils {
 
-    fun setFragmentManager(containerId: Int, fragment: Fragment)
+    fun setFragmentManager(containerId: Int, fragment: Fragment) {}
 
     fun changeSystemBarsColors() {}
 

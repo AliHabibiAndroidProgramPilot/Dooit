@@ -14,7 +14,7 @@ import com.ali.dooit.mvp.ext.ActivityUtils
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ViewMainActivity(
-    private val context: Context,
+    context: Context,
     private val utils: ActivityUtils
 ) {
 
