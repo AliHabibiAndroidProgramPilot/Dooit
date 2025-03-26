@@ -10,4 +10,10 @@
     <string name="new_list">New List</string>
     <string name="no_pinned_list_yet" tools:ignore="TypographyEllipsis">Ooops! No pinned list yet...</string>
     <string name="icon_date">icon date</string>
+    <string name="ic_navigation_back">ic_navigation_back</string>
+    <string name="pin">Pin</string>
+    <string name="pinned">Pinned</string>
+    <string name="pin_icon">pin icon</string>
+    <string name="icon_save_tick">icon save tick</string>
+    <string name="title_hint">Title</string>
 </resources>
