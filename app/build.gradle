@@ -51,8 +51,6 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     // Kotlin Extensions and Coroutines support for Room
     implementation(libs.androidx.room.ktx)
-    // Custom Toggle Button
-    implementation libs.themed.toggle.button.group
 
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit

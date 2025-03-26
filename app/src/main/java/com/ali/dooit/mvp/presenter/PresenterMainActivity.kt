@@ -17,6 +17,7 @@ class PresenterMainActivity(
         onApplyWindowInsets()
         setWelcomePageFragment()
         initializeTabLayout()
+        addTaskButtonOnClick()
     }
 
     private fun setWelcomePageFragment() {
@@ -42,6 +43,10 @@ class PresenterMainActivity(
 
     private fun onApplyWindowInsets() {
         view.applyWindowInsets()
+    }
+
+    private fun addTaskButtonOnClick() {
+        view.addTaskButtonClickHandler()
     }
 
 }

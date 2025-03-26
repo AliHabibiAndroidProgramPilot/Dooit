@@ -1,6 +1,7 @@
 package com.ali.dooit.mvp.view
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,10 +12,11 @@ import androidx.lifecycle.Lifecycle
 import com.ali.dooit.adapter.TabLayoutAdapter
 import com.ali.dooit.databinding.ActivityMainBinding
 import com.ali.dooit.mvp.ext.ActivityUtils
+import com.ali.dooit.ui.AddTaskActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ViewMainActivity(
-    context: Context,
+    private val context: Context,
     private val utils: ActivityUtils
 ) {
 
@@ -48,6 +50,13 @@ class ViewMainActivity(
         TabLayoutMediator(binding.mainTabLayout, binding.tabLayoutViewPager) { tab, position ->
             tab.text = tabLayoutTitles[position]
         }.attach()
+    }
+
+    fun addTaskButtonClickHandler() {
+        binding.btnAddTask.setOnClickListener {
+            val intent = Intent(context, AddTaskActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
 }
