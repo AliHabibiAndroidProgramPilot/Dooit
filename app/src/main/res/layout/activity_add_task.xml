@@ -34,11 +34,12 @@
             android:src="@drawable/ic_save_tick" />
 
         <TextView
+            android:id="@+id/txt_pin_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/btn_pinned_bg"
+            android:background="@drawable/btn_pinned_bg_not_active"
             android:fontFamily="@font/graphik_medium"
             android:gravity="center"
             android:paddingStart="16dp"

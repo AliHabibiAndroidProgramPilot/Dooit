@@ -13,10 +13,15 @@ class PresenterAddTaskActivity(
 
     override fun onCreate() {
         onApplyWindowInsets()
+        pinTaskOnClick()
     }
 
     private fun onApplyWindowInsets() {
         view.applyWindowInsets()
+    }
+
+    private fun pinTaskOnClick() {
+        view.pinTaskClickHandler()
     }
 
 }
