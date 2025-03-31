@@ -1,7 +1,10 @@
 package com.ali.dooit.mvp.view
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -9,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.ali.dooit.R
 import com.ali.dooit.databinding.ActivityAddTaskBinding
 import com.ali.dooit.mvp.ext.ActivityUtils
+import com.google.android.material.textfield.TextInputEditText
 
 class ViewAddTaskActivity(
     private val context: Context,
@@ -52,6 +56,28 @@ class ViewAddTaskActivity(
         binding.icNavigationBack.setOnClickListener {
             utils.getBackPressedDispatchers()!!.onBackPressed()
         }
+    }
+
+    fun emptyTaskTitleController() {
+        val saveIcon: ImageButton = binding.btnSave
+        val title: TextInputEditText = binding.edtTaskTitle
+        title.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(text: CharSequence?, start: Int, before: Int, count: Int) {
+                if (text.isNullOrEmpty()) {
+                    saveIcon.isEnabled = false
+                    saveIcon.isClickable = false
+                    saveIcon.alpha = 0.5f
+                } else {
+                    saveIcon.isEnabled = true
+                    saveIcon.isClickable = true
+                    saveIcon.alpha = 1f
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {}
+        })
     }
 
     private fun TextView.setTextWithFade(text: String) {

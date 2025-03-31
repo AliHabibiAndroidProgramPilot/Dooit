@@ -15,6 +15,7 @@ class PresenterAddTaskActivity(
         onApplyWindowInsets()
         pinTaskOnClick()
         navigationBackOnClick()
+        taskTitleController()
     }
 
     private fun onApplyWindowInsets() {
@@ -27,6 +28,10 @@ class PresenterAddTaskActivity(
 
     private fun navigationBackOnClick() {
         view.navigationBackClickHandler()
+    }
+
+    private fun taskTitleController() {
+        view.emptyTaskTitleController()
     }
 
 }
