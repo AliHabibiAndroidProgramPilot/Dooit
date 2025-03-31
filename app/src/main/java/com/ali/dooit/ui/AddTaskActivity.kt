@@ -1,6 +1,7 @@
 package com.ali.dooit.ui
 
 import android.os.Bundle
+import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.ali.dooit.mvp.ext.ActivityUtils
@@ -21,4 +22,7 @@ class AddTaskActivity : AppCompatActivity(), ActivityUtils {
         setContentView(view.binding.root)
         presenter.onCreate()
     }
+
+    override fun getBackPressedDispatchers(): OnBackPressedDispatcher = onBackPressedDispatcher
+
 }

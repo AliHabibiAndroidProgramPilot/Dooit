@@ -3,6 +3,7 @@ package com.ali.dooit.mvp.view
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.TextView
+import androidx.activity.OnBackPressedDispatcher
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -45,6 +46,12 @@ class ViewAddTaskActivity(
                     pinState = true
                 }
             }
+        }
+    }
+
+    fun navigationBackClickHandler() {
+        binding.icNavigationBack.setOnClickListener {
+            utils.getBackPressedDispatchers()!!.onBackPressed()
         }
     }
 

@@ -14,6 +14,7 @@ class PresenterAddTaskActivity(
     override fun onCreate() {
         onApplyWindowInsets()
         pinTaskOnClick()
+        navigationBackOnClick()
     }
 
     private fun onApplyWindowInsets() {
@@ -22,6 +23,10 @@ class PresenterAddTaskActivity(
 
     private fun pinTaskOnClick() {
         view.pinTaskClickHandler()
+    }
+
+    private fun navigationBackOnClick() {
+        view.navigationBackClickHandler()
     }
 
 }
