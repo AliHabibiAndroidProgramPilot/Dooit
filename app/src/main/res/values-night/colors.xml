@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FFF</color>
+    <color name="low_black">#66FFFFFF</color>
     <color name="white">#000</color>
     <color name="control_gray">#585858</color>
     <color name="item_background_color1">#004D03</color>
