@@ -1,5 +1,6 @@
 package com.ali.dooit.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,13 @@ class PinnedFragment : Fragment(), PinnedFragmentContract.View {
         binding.pinnedRecycler.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.pinnedRecycler.adapter = recyclerAdapter
+    }
+
+    override fun intentToAddTaskActivity() {
+        binding.includedEmptyList.btnNewPinnedTask.setOnClickListener {
+            val intent = Intent(context, AddTaskActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {

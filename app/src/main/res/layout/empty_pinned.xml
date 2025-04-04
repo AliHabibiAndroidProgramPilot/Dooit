@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/img_empty_list" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/btn_new_task"
+        android:id="@+id/btn_new_pinned_task"
         style="@style/ExtendedFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="44dp"

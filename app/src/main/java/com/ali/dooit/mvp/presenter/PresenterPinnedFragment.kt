@@ -21,6 +21,7 @@ class PresenterPinnedFragment(
     }
 
     override fun viewCaller() {
+        view?.intentToAddTaskActivity()
         // Launching Code On Main Thread With Help Of scope Variable
         scope.launch {
             try {

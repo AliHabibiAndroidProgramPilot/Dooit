@@ -6,13 +6,13 @@ interface PinnedFragmentContract {
 
     interface View {
         fun initPinnedRecycler(pinnedTasks: ArrayList<TaskWithTaskSubItems>)
+        fun intentToAddTaskActivity() {}
     }
 
     interface Presenter {
         fun attachView(view: View)
         fun viewCaller() {}
         fun detachView()
-
     }
 
     interface Model {

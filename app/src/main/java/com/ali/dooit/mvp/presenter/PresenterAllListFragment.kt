@@ -13,7 +13,7 @@ class PresenterAllListFragment(
     }
 
     override fun viewCaller() {
-
+        view?.intentToAddTaskActivity()
     }
 
     override fun detachView() {

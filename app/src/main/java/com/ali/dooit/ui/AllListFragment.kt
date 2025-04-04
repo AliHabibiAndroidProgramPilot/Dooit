@@ -1,5 +1,6 @@
 package com.ali.dooit.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,13 @@ class AllListFragment : Fragment(), AllListFragmentContract.View {
     ): View {
         _binding = FragmentAllListBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun intentToAddTaskActivity() {
+        binding.includedEmptyList.btnNewTask.setOnClickListener {
+            val intent = Intent(context, AddTaskActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
